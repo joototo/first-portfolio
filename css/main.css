@@ -1,0 +1,559 @@
+@charset "utf-8";
+
+/* Reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+img {vertical-align: middle;}
+
+/* 영어 폰트 */
+.ny {font-family: 'NewYork', sans-serif;}
+
+/* layout */
+body {font-family: 'Noto Sans KR', sans-serif;}
+.wrap {width: 100%; position: relative; margin: 0 auto; overflow: hidden; color: #212121;}
+
+/*  공통애니 */
+@keyframes spin {
+    0% {transform: translate(0,0) rotate(0deg);}
+    100% {transform: translate(0,0) rotate(360deg);}
+}
+/* animation */
+@keyframes titAni {
+    0%{opacity: 0;}
+    30%{opacity: 0; transform: translate3d(0,80px,0)skewY(30deg);  transform-origin: bottom left;}
+  }
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateY(170px);}
+}
+
+@keyframes slide-down {
+    0% {opacity: 0; }
+    30% {opacity: 0; transform: translateY(-200px);}
+}
+
+@keyframes right {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(200px);}
+}
+@keyframes left {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translateX(-200px);}
+}
+
+@keyframes grow {
+    0% {background-size: 300%; background-position: center;}
+    100% {background-size: 100%;}
+}
+
+@keyframes grow_2 {
+    0% {background-size: 0%; background-position: center ;  }
+    100% {background-size: 100%; }
+}
+
+/* header */
+header {width: 100%; background: inherit; position: fixed; left: 0; top: 0; z-index: 200; transition: all 0.4s; color: #eb3c17;}
+header .inner {margin: 0 auto; overflow: hidden; transition: all 0.4s; line-height: 1; font-size: 28px; font-weight: bold; padding: 30px 40px;}
+header .inner .logo {text-align: left; float: left;}
+header .inner .gnb {float: right;}
+
+/* section.visual */
+section.visual {width: 100%; height: 100vh; background: #fff7eb;}
+section.visual .inner {width: 100%; height: 100vh; position: relative;}
+section.visual .mainText {width: 1100px; margin-top: 15px; line-height: 1; font-size: 165px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+section.visual .mainText .tit1 {text-align: center; position: relative;}
+section.visual .mainText .tit2 {text-align: center;}
+section.visual .mainText .tit3 {letter-spacing: -5px;}
+section.visual .mainText .tit4 {line-height: 1.2;}
+section.visual .mainText .sub {font-size: 14px; line-height: 1.6; padding: 5% 0 0 12%;}
+section.visual .mainText .sub .mo {display: none;}
+section.visual .mainText .txt {display: flex; justify-content: space-between;}
+
+/* 원 애니메이션 */
+section.visual .mainText .tit1:after {content: ''; width: 120px; height: 120px; background: url(../img/circle.png) no-repeat center/120px; position: absolute; top: 58%; right: 11%; z-index: 1; animation-name: spin; animation-duration: 5s; animation-iteration-count: infinite; animation-timing-function: linear; transition: all .4s;}
+
+/* visual motion */
+.visual .mainText.motion .tit1 {animation-name: titAni; animation-duration: 0.8s;}
+.visual .mainText.motion .tit2 {animation-name: titAni; animation-duration: 0.9s;}
+.visual .mainText.motion .tit3 {animation-name: titAni; animation-duration: 1s;}
+.visual .mainText.motion .tit4 {animation-name: titAni; animation-duration: 1.2s;}
+.visual .mainText.motion .sub {animation-name: slide-down; animation-duration: 1.2s;}
+
+
+/* section.ready */
+section.ready .title {width: 100%; text-align: center; padding: 25vh 0 35vh 0; background: #fff7eb;}
+section.ready .title .a {font-size: 100px; color: #eb3c17; font-weight: bold;}
+section.ready .title .b {font-size: 70px; color: #212121;}
+
+/* section.video */
+section.video {width: 100%; background: #212121;}
+section.video .videoWrap {width: 1200px; position: relative; margin: auto; overflow: hidden; border-radius: 50px; padding: 700px 0;}
+section.video .videoWrap video {width: 100%; height: auto; object-fit: cover; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); border-radius: 50px;}
+
+/* section.good */
+section.good {width: 100%; position: relative; background: #212121;}
+section.good .text {max-width: 1200px; background: #212121; color: #fff7eb; padding-bottom: 75vh; text-align: center; margin: 0 auto;}
+section.good .text p.en {font-size: 90px; letter-spacing: -3px;}
+section.good .text .en .mo, section.good .text .ko .mo {display: none;}
+section.good .text p.ko {font-size: 16px; line-height: 1.6; padding-top: 2vh; letter-spacing: -1px;}
+section.good .banner {width: 100%; margin: 0 auto;}
+section.good .cover {width: 150%; height: 100px; position: absolute; bottom: 19%; right: -25%; background: #fff7eb; transform: rotate(-10deg); font-size: 30px; overflow: hidden; color: #212121;}
+section.good .cover ul {width: 250%;}
+section.good .cover ul li {float: left; margin: 30px 50px; position: relative;}
+section.good .cover ul li:after {content: '◆'; position: absolute; top: 0px; left: -60px; color: #212121; font-size: 25px;}
+section.good .cover:nth-child(2) {transform: rotate(10deg);}
+
+/* good 애니메이션 */
+.good .text.motion {animation-name: slide-down ; animation-duration: 0.8s;}
+
+/* section.gallery */
+section.gallery {width: 100%; margin: 0 auto; background: #fff;}
+section.gallery .top {width: 1300px; margin: 20vh auto; overflow: hidden;}
+section.gallery .top .tit1 {color: #eb3c17; font-size: 20px; padding-left: 1vw;}
+section.gallery .top .tit2 {font-size: 160px; line-height: 1.4;}
+section.gallery .top .txt {font-size: 14px; line-height: 1.6; letter-spacing: -1px; padding-left: 1vw;}
+section.gallery .top .txt .mo {display: none;}
+section.gallery .top a {display: block; width: 50px; height: 50px; line-height: 50px; color: #212121; border: 1px solid #212121; font-size: 18px; padding: 30px 30px; border-radius: 50%; text-align: center; transition: all 0.4s; margin: 50px 0 0 20px;}
+section.gallery .top a:hover {color: #fff7eb; background: #eb3c17; border: 1px solid #eb3c17; transition: all 0.4s;}
+
+/* gallery motion */
+.gallery .top.motion .tit1 {animation-name: left; animation-duration: 0.7s;}
+.gallery .top.motion .tit2 {animation-name: left; animation-duration: 0.9s;}
+.gallery .top.motion .txt  {animation-name: left; animation-duration: 1.1s;}
+
+.slider-wrap {margin-bottom: 50vh; position: relative;}
+/* 공통슬라이더 */
+.swiper-slide {width: 100%; overflow: hidden; position: relative; background: #000;}
+.swiper-slide img {width: 100%;}
+/* 메인슬라이더 효과 */
+.slider img {transform: translateY(-20px); transition: all 0.5s; opacity: 0;}
+.slider .swiper-slide-active img {transform: translateY(0); opacity: 1;}
+/* 버튼 */
+.swiper-button-next, .swiper-button-prev {z-index: 20; width: 50px; height: 30px; background: url(../img/readMore2.png) no-repeat center/50px; top: 111%; cursor: pointer;}
+.swiper-button-next {right: 20%; transform: rotate(180deg);}
+.swiper-button-prev {left: 20%;}
+/* 랩탑이미지 */
+.slider-wrap .laptop {width: 52%; position: absolute; left: 50%; top: 29%; transform: translateX(-50%); z-index: 1;}
+.slider-wrap .laptop img {width: 100%;}
+/* 랩탑목업에 썸네일 슬라이드 위치 */
+.slider-wrap .slider-thumbnail {width: 42%; height: 85%; position: absolute; left: 50%; top: 35%; border-radius: 5%; transform: translateX(-50%);}
+/* 텍스트 */
+.slider-wrap .slider-thumbnail .textBox {color: #fff; position: absolute; font-size: 50px; left: 50%; top: 60%; transform: translate(-50%,-50%); opacity: 0; transition: all 0.5s; text-shadow: 2px 1px 1px #000;}
+.slider-wrap .slider-thumbnail .swiper-slide-active .textBox {opacity: 1; top: 50%; font-family: 'NewYork'; text-align: center;}
+
+/* section.about */
+section.about {width: 100%; background: #212121; margin: 0 auto; position: relative;}
+section.about .title {width: 945px; margin: 0 auto; font-size: 130px; color: #fff7eb; line-height: 1.2; text-align: center; padding: 25vh 0; line-height: 1;}
+section.about .title span {color: #eb3c17;}
+section.about .title .tit1 {text-align: left;}
+section.about .title .tit2 {text-align: right;}
+section.about .inner {width: 1200px; display: flex; justify-content: space-between; margin: 0 auto; padding-bottom: 30vh;}
+section.about .img {width: 620px;}
+section.about .img img {width: 100%; height: auto;}
+section.about .inner .text {width: 500px; text-align: right; padding-top: 7vh;}
+section.about .inner .text p {font-size: 17px; line-height: 2; margin-bottom: 3vh; letter-spacing: -1.2px; color: #fff7eb;}
+section.about .inner .text p:first-child {font-size: 28px;}
+section.about .inner .text a {display: block; float: right; width: 50px; height: 50px; line-height: 50px; color: #fff7eb; border: 1px solid #fff7eb; font-size: 18px; padding: 30px 30px; border-radius: 50%; text-align: center; transition: all 0.3s; margin-top: 30px;}
+section.about .inner .text a:hover {color: #212121; background: #fff7eb; transition: all 0.3s;}
+
+/* 해시태그 애니메이션 */
+section.about .inner .img:after {content: ''; width: 220px; height: 220px; background: url(../img/rotation_3.png) no-repeat center/220px; position: absolute; top: -16%; left: -18%; z-index: 1; animation-name: spin; animation-duration: 20s; animation-iteration-count: infinite; animation-timing-function: linear; transition: .4s;}
+
+/* about motion */
+.about .title.motion .tit1 {animation-name: titAni ; animation-duration: 0.8s;}
+.about .title.motion .tit2 {animation-name: titAni ; animation-duration: 1.0s;}
+.about .inner .img.motion {animation-name: slide-down; animation-duration: 1s;}
+.about .inner .text.motion {animation-name: left; animation-duration: 1.2s;}
+
+/* section.skill */
+section.skill {width: 100%; background: #fff7eb;}
+section.skill .inner {width: 990px; margin: 0 auto; display: flex; justify-content: space-between; padding: 27vh 0;}
+section.skill .inner .left {width: 350px; font-size: 120px; letter-spacing: 2px; line-height: 1; padding-top: 10vh;}
+section.skill .inner .left p.txt {font-size: 15px; line-height: 1.6; letter-spacing: -1px; padding-top: 4vh;}
+section.skill .inner .left p.txt .mo {display: none;}
+section.skill .inner .right {width: 390px; height: auto;}
+section.skill .inner .right img {width: 100%;}
+
+/* skill motion */
+.skill .inner .left.motion {animation-name: left ; animation-duration: 0.8s;}
+.skill .inner .right.motion {animation-name: slide-down ; animation-duration: 0.8s;}
+
+/* topBtn */
+.topBtn {position: fixed; bottom: 40px; right: 50px; width: 45px; height: 45px; border-radius: 50%; background: #eb3c17; z-index: 100;}
+.topBtn img{width: 19px; position: absolute; top: 14px; right: 13px;}
+
+/* animated-title */
+.animated-title {width: 100%; height: 100px; font-size: 70px; position: relative; overflow-x: hidden; overflow-y: hidden; background: #212121;}
+.animated-title .track {position: absolute; white-space: nowrap; animation: marquee 40s linear infinite; color: #fff7eb;}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* footer.contact */
+footer.contact {width: 100%; height: 100vh; background: #212121; color: #fff7eb;}
+footer.contact .inner {width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; padding-top: 300px;}
+footer.contact .inner .left p {font-size: 150px; line-height: 1;}
+footer.contact .inner .left .bottom {display: flex; justify-content: space-between;}
+footer.contact .inner .left .bottom .sub .mo {display: none;}
+footer.contact .inner .left .bottom .sub {font-size: 15px; margin: 3vh 0 0 3vw;}
+footer.contact .inner .right {font-size: 30px; line-height: 1.6; padding-top: 5vh;}
+footer.contact .inner .right span {font-size: 20px; color: #eb3c17;}
+
+/* footer motion */
+.contact .inner .left.motion .tit1 {animation-name: titAni ; animation-duration: 0.8s;}
+.contact .inner .left.motion .tit2 {animation-name: titAni ; animation-duration: 1.0s;}
+.contact .inner .left.motion .sub {animation-name: slide-up ; animation-duration: 1.1s;}
+.contact .inner .right.motion {animation-name: slide-up; animation-duration: 1s;}
+
+/* menuWrap */
+.menuWrap {width: 100%; height: 100vh; position: fixed; top: 0; right: 0; z-index: 100; background: #fff7eb;}
+.menuWrap .tit {color: #212121; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 120px; text-align: center; letter-spacing: -1px;}
+.menuWrap .tit li a {display: inline-block; position: relative; margin-bottom: 20px; transition: all 0.3s;}
+.menuWrap .tit li a:hover, .menuWrap .tit li a:focus {transform: translateX(30px); color: #eb3c17;}
+.menuWrap .tit li a:after {content: ''; position: absolute; width: 0%; height: 2px; background: #eb3c17; bottom: -5px; left: 0; transition: all 0.3s;}
+.menuWrap .tit li a:hover:after, .menuOpen .menuWrap .tit li a:focus:after {width: 100%;}
+.menuWrap .close:nth-child(1) {position: absolute; top: 50%; transform: translateY(-50%); right: 30px; transition: all 0.5s;}
+.menuWrap .close:nth-child(2) {position: absolute; right: 45px; top: 30px; font-size: 28px; font-weight: bold; color: #eb3c17; line-height: 1; letter-spacing: 1.2px; transition: all 0.5s;}
+
+/* 배경해시태그 애니메이션 */
+.menuWrap.on:before {content: ''; width: 20vw; height: 20vw; background: url(../img/rotation_2.png) no-repeat center/20vw; position: absolute; top: -23%; left: 15%; z-index: 1;animation-name: spin; animation-duration: 20s; animation-iteration-count: infinite; animation-timing-function: linear; transition: .4s;}
+
+
+/* menuWrap 열기 */
+.menuWrap {width: 0; transition: 0s; overflow: hidden; transform: skewY(40deg); opacity: 0;}
+.menuWrap.on {width: 100%; right: 0; transform: skewY(0deg); opacity: 1; transition: 0.5s; z-index: 300;}
+/* .menuWrap ul {display: none;} */
+/* .menuWrap.on ul {display: block;} */
+
+
+
+/* 반응형 제작 */
+@media screen and (max-width:1600px) {
+    .menuWrap.on:before {display: none;}
+    .menuWrap .tit {font-size: 110px;}
+    section.visual .mainText {width: 62%; font-size: 150px;}
+    section.visual .mainText .sub {padding: 5% 0 0 4%;}
+    section.visual .mainText .tit1:after {content: ''; width: 100px; height: 100px; background: url(../img/circle.png) no-repeat center/100px; position: absolute; top: 60%; right: 12%;}
+    section.video .videoWrap {width: 70%; padding: 40% 0;}
+    section.good .text {padding-bottom: 40%;}
+    section.gallery .top {width: 70%; margin: 15% auto;}
+    section.gallery .slider-wrap {margin-bottom: 30%;}
+    section.about .title {width: 50%; font-size: 110px; padding: 17% 0;}
+    section.about .inner {width: 70%; padding-bottom: 18%;}
+    section.about .inner .text {padding-top: 7%;}
+    section.about .inner .text p:first-child {font-size: 24px;}
+    section.about .inner .text p {font-size: 15px;}
+    section.about .img {width: 55%;}
+    section.skill .inner {padding: 13% 0;}
+    footer.contact .inner {width: 62%;}
+    footer.contact .inner .left p {font-size: 130px;}
+    footer.contact .inner .right {padding-top: 3%;}
+}
+
+
+@media screen and (max-width:1450px) {
+    section.visual .mainText {width: 64%; font-size: 140px;}
+    section.visual .mainText .sub {padding: 5% 0 0 2%;}
+    section.ready .title .a {font-size: 80px;}
+    section.ready .title .b {font-size: 55px;}
+    section.good .text p.en {font-size: 80px;}
+    section.good .cover {height: 70px; position: absolute; bottom: 17%; font-size: 20px;}
+    section.good .cover ul li {margin: 22px 40px;}
+    section.good .cover ul li:after {content: '◆'; position: absolute; top: 0; left: -51px; font-size: 17px;}
+    section.gallery .top .tit2{font-size: 140px; line-height: 1.2;}
+    section.gallery .top a {width: 40px; height: 40px; line-height: 40px; margin-top: 5%; font-size: 16px; text-align: center;}
+    section.about .title {width: 55%;}
+    section.about .img {width: 60%;}
+    section.about .inner {width: 70%; padding-bottom: 20%;}
+    section.about .inner .text a {width: 40px; height: 40px; line-height: 40px; font-size: 16px; margin-top: 10px;}
+    section.skill .inner {width: 65%;}
+    section.skill .inner .right {width: 40%;}
+    footer.contact .inner .left p {font-size: 110px;}
+    footer.contact .inner .left .bottom .sub {font-size: 14px; margin: 3vh 0 0 1vw;}
+    footer.contact .inner .right {padding-top: 2vh;}
+    .menuWrap .tit {font-size: 110px;}
+}
+
+
+@media screen and (max-width:1302px) {
+    .menuWrap .tit {font-size: 100px;}
+    header .inner, .menuWrap .close:nth-child(2) {font-size: 24px; font-weight: normal;}
+    section.visual .mainText {width: 71%;}
+    section.good .text p.en {font-size: 70px;}
+    section.gallery .top .tit2 {font-size: 120px;}
+    section.gallery .top a {width: 35px; height: 35px; line-height: 35px; font-size: 16px;}
+    .slider-wrap .slider-thumbnail .textBox {font-size: 40px;}
+    section.about .title {width: 55%; font-size: 100px;}
+    section.about .inner {width: 72%;}
+    section.about .inner .text p:first-child {font-size: 20px;}
+    section.about .inner .text p {font-size: 15px;}
+    section.about .inner .text a {width: 35px; height: 35px; line-height: 35px; font-size: 16px; margin-top: 10px;}
+    section.about .inner .img:after {top: -20%; left: -22%;}
+    section.skill .inner .left {font-size: 100px;}
+    .animated-title {font-size: 60px;}
+    footer.contact .inner .left p {font-size: 100px;}
+    footer.contact .inner .right {font-size: 25px;}
+    footer.contact .inner .left .bottom .sub .mo {display: block;}
+    footer.contact .inner .left .bottom .sub {padding: 0; margin: 3vh 0 0 5vw;}
+}
+
+
+@media screen and (max-width:1145px) {
+    .menuWrap .tit {font-size: 80px;}
+    .menuWrap .close:nth-child(1) {display: none;}
+    section.visual .mainText {width: 75%; font-size: 130px;}
+    section.visual .mainText .sub {font-size: 12px;}
+    section.good .text p.en {font-size: 62px;}
+    section.good .text p.ko {font-size: 14px;}
+    section.about .title {width: 58%;}
+    section.about .inner {width: 78%;}
+    section.about .img {width: 70%;}
+    section.about .inner .img:after {content: ''; width: 160px; height: 160px; background: url(../img/rotation_3.png) no-repeat center/160px; position: absolute; top: -13%; left: -14%;}
+    section.about .inner .text {padding-top: 5%;}
+    section.skill .inner {width: 68%;}
+    section.skill .inner .right {width: 42%;}
+    footer.contact .inner {width: 70%;}
+}
+
+
+@media screen and (max-width:1014px) {
+    .topBtn {bottom: 30px; right: 30px; width: 40px; height: 40px;}
+    .topBtn img {width: 15px; top: 14px; right: 13px;}
+    section.visual .mainText {width: 78%; font-size: 120px;}
+    section.good .text p.en {font-size: 57px;}
+    section.good .cover {height: 55px; font-size: 16px;}
+    section.good .cover ul li {margin: 18px 33px;}
+    section.good .cover ul li:after {content: '◆'; position: absolute; top: 0; left: -43px; font-size: 12px;}
+    section.gallery .top {width: 77%; margin: 12% auto;}
+    section.gallery .top .tit1 {font-size: 16px;}
+    section.gallery .top .tit2 {font-size: 100px;}
+    section.gallery .top a {width: 30px; height: 30px; line-height: 30px; font-size: 15px; margin: 40px 0 0 15px;}
+    section.gallery .slider-wrap .laptop {width: 56%;}
+    .slider-wrap .slider-thumbnail {width: 44%; height: 86%; top: 36%;}
+    .swiper-button-next, .swiper-button-prev {width: 35px; height: 30px; background: url(../img/readMore2.png) no-repeat center/35px; top: 115%;}
+    section.about .inner {width: 80%;}
+    section.about .title {font-size: 80px;}
+    section.about .img {width: 75%;}
+    section.about .inner .text p {margin-bottom: 15px;}
+    section.about .inner .text p:first-child {font-size: 18px;}
+    section.skill .inner .left {font-size: 85px;}
+    .animated-title {font-size: 50px;}
+    footer.contact .inner {width: 68%;}
+    footer.contact .inner .left p {font-size: 90px;}
+    footer.contact .inner .left .bottom .sub {font-size: 14px;}
+    footer.contact .inner .right {font-size: 22px;}
+}
+
+
+@media screen and (max-width:942px) {
+    section.visual .mainText {width: 85%;}
+    section.visual .mainText .sub {line-height: 1.4; padding: 5% 0 0 2%; font-size: 10px;}
+    section.visual .mainText .tit1:after {content: ''; width: 90px; height: 90px; background: url(../img/circle.png) no-repeat center/90px; position: absolute;}
+    section.ready .title .a {font-size: 70px;}
+    section.ready .title .b {font-size: 45px;}
+    section.about .title {width: 60%;}
+    section.about .inner {display: block; width: 100%;}
+    section.about .img {width: 55%; margin: 0 auto;}
+    section.about .inner .img:after {top: -16%; left: -16%;}
+    section.about .inner .text {width: 50%; margin: 0 auto; padding: 7% 0 13% 0;}
+    section.about .inner .text p:first-child {font-size: 25px;}
+    section.about .inner .text a {width: 30px; height: 30px; line-height: 30px;}
+    section.skill .inner {display: block; width: 100%; padding: 25% 0;}
+    section.skill .inner .left {margin: 0 auto; width: 65%; padding-top: 0;}
+    section.skill .inner .right {margin: 0 auto; width: 38%; padding-top: 10%;}
+    footer.contact .inner {display: block; text-align: center; width: 54%; padding-top: 155px;}
+    footer.contact .inner .left p {font-size: 120px; line-height: 0.9;}
+    footer.contact .inner .left .tit1 {text-align: left;}
+    footer.contact .inner .left .tit2 {text-align: right;}
+    footer.contact .inner .left .bottom {display: block;}
+    footer.contact .inner .left .bottom .sub {display: none;}
+    footer.contact .inner .right {font-size: 30px; padding-top: 22%;}
+}
+
+@media screen and (max-width:790px) {
+    header .inner, .menuWrap .close:nth-child(2) {font-size: 20px;}
+    header .inner {padding: 20px;}
+    .menuWrap .close:nth-child(2) {top: 20px; right: 20px;}
+    section.visual .mainText {width: 88%; font-size: 115px;}
+    section.visual .mainText .sub {padding: 7% 0 0 2%;}
+    section.visual .mainText .sub span {display: none;}
+    section.visual .mainText .tit1:after {content: ''; width: 75px; height: 75px; background: url(../img/circle.png) no-repeat center/75px; position: absolute; top: 62%; right: 10%;}
+    section.video .videoWrap {width: 85%; padding: 50% 0;}
+    section.video .videoWrap video {border-radius: 25px;}
+    section.good .text {padding-bottom: 50%;}
+    section.good .text p.en {font-size: 45px; letter-spacing: -1px;}
+    section.good .text p.ko {font-size: 12px; line-height: 1.4;}
+    section.good .cover {bottom: 14%;}
+    section.gallery .top {width: 80%; margin: 15% auto;}
+    section.gallery .top .tit2 {font-size: 90px;}
+    section.gallery .top a {width: 20px; height: 20px; line-height: 20px; font-size: 13px;}
+    section.gallery .slider-wrap .laptop {width: 63%;}
+    section.gallery .slider-wrap .slider-thumbnail {width: 51%; height: 100%; top: 37%;}
+    section.gallery .swiper-button-next, .swiper-button-prev {width: 30px; height: 26px; background: url(../img/readMore2.png) no-repeat center/30px; top: 119%;}
+    section.gallery .swiper-button-prev {left: 17%;}
+    section.gallery .swiper-button-next {right: 17%;}
+    section.gallery .slider-wrap .slider-thumbnail .textBox {font-size: 35px;}
+    section.gallery .slider-wrap {margin-bottom: 40%;}
+    section.about .title {width: 65%; font-size: 75px; padding: 20% 0;}
+    section.about .img {width: 65%;}
+    section.about .inner .img:after {top: -15%; left: -16%;}
+    section.about .inner .text {width: 64%;}
+    section.about .inner .text p {font-size: 14px; line-height: 1.8;}
+    section.about .inner .text p:first-child {font-size: 20px;}
+    section.skill .inner .left p.txt {font-size: 14px;}
+    section.skill .inner .right {width: 42%;}
+    footer.contact .inner {padding-top: 170px;}
+    footer.contact .inner .left p {font-size: 100px;}
+}
+
+@media screen and (max-width:656px) {
+    section.visual .mainText {font-size: 105px; width: 90%;}
+    section.visual .mainText .sub .mo {display: block; padding: 7% 0 0 7%;}
+    section.visual .mainText .tit1:after {top: 63%; right: 5%;}
+    section.ready .title .a {font-size: 60px;}
+    section.ready .title .b {font-size: 38px;}
+    section.video .videoWrap {width: 90%; padding: 60% 0;}
+    section.good .text {padding-bottom: 65%;}
+    section.good .text .en {font-size: 40px; line-height: 1; text-align: right; padding-right: 5%;}
+    section.good .text .en .mo {display: block;}
+    section.good .text .ko {display: none;}
+    section.good .cover {transform: rotate(-12deg); bottom: 17%;}
+    section.good .cover:nth-child(2) {transform: rotate(12deg);}
+    section.gallery .top {margin: 20% auto;}
+    section.gallery .top .tit1 {font-size: 14px;}
+    section.gallery .top .tit2 {font-size: 75px; padding: 5% 0;}
+    section.gallery .top .txt {font-size: 12px;}
+    section.gallery .slider-wrap .laptop {width: 67%;}
+    section.gallery .slider-wrap .slider-thumbnail {width: 54%; height: 102%; top: 38%;}
+    section.gallery .swiper-button-prev {left: 15%;}
+    section.gallery .swiper-button-next {right: 15%;}
+    section.about .title {width: 70%; font-size: 70px;}
+    section.about .inner {padding-bottom: 30%;}
+    section.about .inner .text {width: 64%;}
+    section.about .inner .img:after {content: ''; width: 140px; height: 140px; background: url(../img/rotation_3.png) no-repeat center/140px; position: absolute; top: -17%; left: -17%;}
+    section.about .inner .text p:first-child {font-size: 18px;}
+    section.skill .inner {padding: 25% 0;}
+    section.skill .inner .left {font-size: 80px;}
+    section.skill .inner .right {width: 45%;}
+    footer.contact .inner {padding-top: 190px;}
+    footer.contact .inner .left p {font-size: 90px;}
+}
+
+@media screen and (max-width:550px) {
+    .menuWrap .tit {font-size: 75px;}
+    section.visual .mainText {font-size: 100px;}
+    section.visual .mainText .tit1:after {top: 65%; right: -1%;}
+    section.video .videoWrap {width: 90%; padding: 65% 0;}
+    section.video .videoWrap video {border-radius: 20px;}
+    section.good .text {padding-bottom: 65%;}
+    section.good .text p.en {font-size: 35px;}
+    section.good .cover {height: 50px; font-size: 15px; bottom: 14%;}
+    section.good .cover ul li {margin: 14px 35px;}
+    section.good .cover ul li:after {top: 2px;}
+    section.gallery .top {width: 85%;}
+    section.gallery .swiper-button-prev {left: 12%;}
+    section.gallery .swiper-button-next {right: 12%;}
+    section.gallery .slider-wrap .slider-thumbnail .textBox {font-size: 30px;}
+    section.about .title {width: 75%; font-size: 65px;}
+    section.about .img {width: 75%;}
+    section.about .inner .img:after {content: ''; width: 100px; height: 100px; background: url(../img/rotation_3.png) no-repeat center/100px; position: absolute; top: -12%; left: -12%;}
+    section.skill .inner .right {width: 50%;}
+    .animated-title {font-size: 45px;}
+    footer.contact .inner {width: 65%; padding-top: 200px;}
+    footer.contact .inner .left p {font-size: 85px;}
+}
+
+@media screen and (max-width:502px) {
+    .menuWrap .tit {font-size: 70px;}
+    section.visual .mainText {width: 95%; font-size: 90px;}
+    section.visual .mainText .tit1:after {content: ''; width: 70px; height: 70px; background: url(../img/circle.png) no-repeat center/70px; position: absolute; top: 60%; right: 1%;}
+    section.good .text p.en {font-size: 32px;}
+    section.gallery .top .tit2 {font-size: 65px; padding: 3% 0;}
+    section.gallery .top a {width: 16px; height: 16px; line-height: 16px; margin: 30px 0 0 5px;}
+    section.about .title {width: 72%; font-size: 60px;}
+    section.about .inner .text {width: 72%;}
+    section.gallery .slider-wrap .laptop {width: 68%;}
+    section.gallery .slider-wrap .slider-thumbnail {width: 55%; height: 104%; top: 38%;}
+}
+
+@media screen and (max-width:435px) {
+    .menuWrap .tit {font-size: 65px;}
+    section.visual .mainText {font-size: 80px;}
+    section.visual .mainText .tit1:after {content: ''; width: 65px; height: 65px; background: url(../img/circle.png) no-repeat center/65px; position: absolute; top: 62%; right: 0%;}
+    section.video .videoWrap {width: 95%;}
+    section.good .text p.en {font-size: 30px;}
+    section.good .cover {height: 45px;}
+    section.good .cover ul li {margin: 12px 35px;}
+    section.gallery .top {margin: 25% auto;}
+    section.gallery .top .tit2 {font-size: 60px; padding: 2% 0;}
+    section.gallery .top a {width: 12px; height: 12px; line-height: 12px;}
+    section.gallery .swiper-button-next, .swiper-button-prev {width: 27px; height: 26px; background: url(../img/readMore2.png) no-repeat center/27px; top: 128%;}
+    section.gallery .slider-wrap {margin-bottom: 48%;}
+    section.gallery .slider-wrap .laptop {width: 69%;}
+    section.gallery .slider-wrap .slider-thumbnail {width: 56%; height: 104%; top: 39%;}
+    section.about .inner {adding-bottom: 38%;}
+    section.about .inner .img:after {top: -14%; left: -10%;}
+    section.about .title {font-size: 57px; padding: 25% 0;}
+    section.about .inner .text p {font-size: 13px;}
+    section.about .inner .text a {width: 22px; height: 22px; line-height: 22px; font-size: 14px;}
+    section.skill .inner {padding: 30% 0;}
+    section.skill .inner .right {width: 55%;}
+    section.skill .inner .left {width: 72%; font-size: 70px;}
+    section.skill .inner .left p.txt {font-size: 12px;}
+    footer.contact .inner {width: 70%; padding-top: 220px;}
+    footer.contact .inner .right {font-size: 25px;}
+    footer.contact .inner .left p {font-size: 74px;}
+    section.about .inner {padding-bottom: 38%;}
+}
+
+
+@media screen and (max-width:395px) {
+    section.visual .mainText {font-size: 75px;}
+    section.visual .mainText .sub {padding-top: 6%; font-size: 8px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

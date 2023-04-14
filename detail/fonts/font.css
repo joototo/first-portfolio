@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* 영어 font - NewYork */
+@font-face {
+    font-family: 'NewYork';
+    src: url('../fonts/NewYork.woff') format('woff');
+}
+
+/* 한글 font - NotoSansKR 400, 700*/
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
