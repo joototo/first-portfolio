@@ -282,7 +282,7 @@ footer.contact .inner .right span {font-size: 20px; color: #eb3c17;}
 
 @media screen and (max-width:1302px) {
     .menuWrap .tit {font-size: 100px;}
-    header .inner, .menuWrap .close:nth-child(2) {font-size: 24px; font-weight: normal;}
+    header .inner, .menuWrap .close:nth-child(2) {font-size: 24px;}
     section.visual .mainText {width: 71%;}
     section.good .text p.en {font-size: 70px;}
     section.gallery .top .tit2 {font-size: 120px;}
@@ -513,8 +513,12 @@ footer.contact .inner .right span {font-size: 20px; color: #eb3c17;}
 
 
 @media screen and (max-width:395px) {
-    section.visual .mainText {font-size: 75px;}
-    section.visual .mainText .sub {padding-top: 6%; font-size: 8px;}
+    section.visual .mainText .sub, section.visual .mainText .tit1::after {display: none;}
+    section.visual .mainText .txt {display: block;}
+    section.visual .mainText.motion .tit3 {font-family: 'NewYork'; letter-spacing: -1px;}
+    section.visual .mainText.motion .tit4 {letter-spacing: 2px;}
+    section.visual .mainText.motion .tit3, .visual .mainText.motion .tit4 {text-align: center;}
+    footer.contact .inner .left p {font-size: 72px;}
 }
 
 
