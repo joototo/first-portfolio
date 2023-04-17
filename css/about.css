@@ -170,8 +170,8 @@ section.favorite .list li:nth-child(8) .box:after {content: '#Nana❤';}
 section.favorite .list li:nth-child(9) .box:after {content: '#Nana❤';}
 section.favorite .list li .box {width: 290%; height: 145%; position: relative; padding-top: 15vh;}
 section.favorite .list li .box img {filter: grayscale(100%); transition: .3s; border-radius: 30px;}
-section.favorite .list li .box img:hover {filter: none; transition: .3s;}
-section.favorite .list li .box:hover:after {opacity: 0; transition: all 0.5s;}
+section.favorite .list li .box img:hover, section.favorite .list li .box img:focus {filter: none; transition: .3s;}
+section.favorite .list li .box:hover:after, section.favorite .list li .box:focus:after {opacity: 0; transition: all 0.5s;}
 section.favorite .list li.a {transform: rotate(-5deg);}
 section.favorite .list li.b {transform: rotate(0deg);}
 section.favorite .list li.c {transform: rotate(5deg);}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clone_Phomein</title>
+    <!-- js -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/scrolla.jquery.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/clone.js"></script>
+    <!-- css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/clone_phomein.css">
+    <link rel="stylesheet" href="fonts/font.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- header -->
+        <header>
+            <div class="inner">
+                <div class="logo">
+                    <a href="../index.html">
+                        <p>JOO</p>
+                        <p>HEEWON</p>
+                    </a>
+                </div>
+                <div class="gnb menuOpen">
+                    <a href="#">
+                        <p>ME</p>
+                        <p>NU</p>
+                    </a>
+                </div>
+            </div>
+            <!-- menuWrap -->
+            <div class="menuWrap">
+                <a href="#" class="close"><img src="img/close.png" alt="메뉴닫기"></a>
+                <a href="#" class="close">
+                    <p>BA</p>
+                    <p>CK</p>
+                </a>
+                <ul class="tit ny">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../about.html">About</a></li>
+                    <li><a href="../gallery.html">Gallery</a></li>
+                    <li><a href="../portfolio.html">Portfolio</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- section.visual  -->
+        <section class="visual animate" data-animate="motion">
+            <p class="ny">Phomein</p>
+            <p>Clone coding detail page</p>
+        </section>
+        <!-- section.learn -->
+        <section class="learn animate" data-animate="motion">
+            <div class="inner animate" data-animate="motion">
+                <div class="left">
+                    <p class="txt_1">Phomein</p>
+                    <p class="txt_2">포메인</p>
+                    <p class="txt_3">국내 최대 베트남쌀국수 체인점 '포메인'의 홈페이지</p>
+                </div>
+                <div class="right">
+                    <p class="txt_1">주요학습내용</p>
+                    <p class="txt_3">- 전체 fullpage 적용<br>
+                    - 네비게이션 설정 / 클릭시 해당 페이지로 이동<br>
+                    - Visual 영역 슬라이드 적용<br>
+                    - 숫자 카운트 액션 적용<br>
+                    - scrolla 적용으로 이미지와 폰트의 animation 적용
+                </div>
+            </div>
+        </section>
+        <!-- section.view -->
+        <section class="view">
+            <div class="inner">
+                <p class="img">
+                    <a href="#" onclick="window.open('clonecoding/phomein/index.html', target='_blank','width=1669 height=1080')"><img src="img/pc_7.png" alt="포메인pc목업이미지"></a>
+                </p>           
+                <p class="more">
+                    <a href="#" onclick="window.open('clonecoding/phomein/index.html', '_blank','width=1669 height=1080')">PC</a>
+                </p>
+            </div>
+        </section>
+        <!-- section.full -->
+        <section class="full animate" data-animate="motion">
+            <p><img src="img/screencapture_7.png" alt="포메인풀페이지캡쳐사진"></p>
+        </section>
+       
+        <!-- topBtn  -->
+        <a href="javascript:window.scrollTo(0,0);" class="topBtn"><img src="img/icon_top.png" alt="top"></a>
+        <!-- animated-title -->
+        <div class="animated-title">
+            <div class="track">
+              <div class="content">
+                <span class="ny">Grind</span> hard 
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard 
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard 
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard 
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard
+                <span class="ny">Shine</span> hard.
+                <span class="ny">Grind</span> hard
+                <span class="ny">Shine</span> hard.
+              </div>
+            </div>
+          </div>
+        <!-- footer.contact -->
+        <footer class="contact">
+            <div class="inner">
+                <div class="left animate" data-animate="motion">
+                    <p class="tit1 ny">Contact</p>
+                    <div class="bottom">
+                        <div class="sub">Would you like to work with me?</div>
+                        <div class="tit2 ny">Me</div>
+                    </div>
+                </div>
+                <div class="right animate" data-animate="motion">
+                    <span class="ny">E-mail</span>
+                    <p>hwjoo87@naver.com</p>
+                    <span class="ny">Phone</span>
+                    <p>010-4572-8712</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script>
+    //swiper
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1, //보여지는 갯수
+    spaceBetween: 20, //각각 간격
+    centeredSlides: true, //센터모드
+    loop: true, //루프
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    });
+    </script>
+    </body>
+</html>

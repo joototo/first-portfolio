@@ -118,7 +118,7 @@ section.gallery .top .tit2 {font-size: 160px; line-height: 1.4;}
 section.gallery .top .txt {font-size: 14px; line-height: 1.6; letter-spacing: -1px; padding-left: 1vw;}
 section.gallery .top .txt .mo {display: none;}
 section.gallery .top a {display: block; width: 50px; height: 50px; line-height: 50px; color: #212121; border: 1px solid #212121; font-size: 18px; padding: 30px 30px; border-radius: 50%; text-align: center; transition: all 0.4s; margin: 50px 0 0 20px;}
-section.gallery .top a:hover {color: #fff7eb; background: #eb3c17; border: 1px solid #eb3c17; transition: all 0.4s;}
+section.gallery .top a:hover, section.gallery .top a:focus {color: #fff7eb; background: #eb3c17; border: 1px solid #eb3c17; transition: all 0.4s;}
 
 /* gallery motion */
 .gallery .top.motion .tit1 {animation-name: left; animation-duration: 0.7s;}
@@ -158,7 +158,7 @@ section.about .inner .text {width: 500px; text-align: right; padding-top: 7vh;}
 section.about .inner .text p {font-size: 17px; line-height: 2; margin-bottom: 3vh; letter-spacing: -1.2px; color: #fff7eb;}
 section.about .inner .text p:first-child {font-size: 28px;}
 section.about .inner .text a {display: block; float: right; width: 50px; height: 50px; line-height: 50px; color: #fff7eb; border: 1px solid #fff7eb; font-size: 18px; padding: 30px 30px; border-radius: 50%; text-align: center; transition: all 0.3s; margin-top: 30px;}
-section.about .inner .text a:hover {color: #212121; background: #fff7eb; transition: all 0.3s;}
+section.about .inner .text a:hover, section.about .inner .text a:focus {color: #212121; background: #fff7eb; transition: all 0.3s;}
 
 /* 해시태그 애니메이션 */
 section.about .inner .img:after {content: ''; width: 220px; height: 220px; background: url(../img/rotation_3.png) no-repeat center/220px; position: absolute; top: -16%; left: -18%; z-index: 1; animation-name: spin; animation-duration: 20s; animation-iteration-count: infinite; animation-timing-function: linear; transition: .4s;}

@@ -1,0 +1,323 @@
+@charset "utf-8";
+
+/* reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+h1, h2, h3, h4, h5, h6 {font-weight: 700; font-size: inherit;}
+a {color: inherit; text-decoration: inherit;}
+img {vertical-align: middle;}
+a img {border: none;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+
+/* layout */
+body {font-family: 'NanumSquare',sans-serif !important; font-size: 14px; color: #4e4e4e; line-height: 1.4;}
+.wrap {width: 100%; min-width: 1100px; overflow: hidden;}
+
+/* header */
+header {width: 100%; height: 120px; line-height: 120px; padding: 0 60px; box-sizing: border-box; position: fixed; top: 0; z-index: 100;}
+header.on {background: #fff;}
+header .open {display: none;}
+header .close {display: none;}
+header .logo {float: left; font-size: 42px; font-weight: 900; letter-spacing: -6px; color: #39312b; width: 200px;}
+header .logo a {display: block;}
+header nav {float: right; color: #000;}
+header nav .gnb li {display: inline-block; margin-left: 60px;}
+header nav .gnb li a{display: block; font-size: 18px; text-transform: uppercase; position: relative;}
+header nav .gnb li a:after {content: ''; width: 0%; height: 1px; position: absolute; background: #888; left: 50%; transform: translateX(-50%); bottom: 47px; transition: all 0.5s;}
+header nav .gnb li a:hover:after, header nav .gnb li a:focus:after {width: 100%;}
+
+/* visual */
+section.visual {margin-top: 120px; padding-bottom: 50px; position: relative;}
+section.visual:before {content: ''; width: 53%; height: 400px; background: #f0f0f0; position: absolute; right: 0; bottom: 0;}
+section.visual .img {width: 94%; position: relative; text-align: center;}
+section.visual .img .imgBox {display: block; width: 100%; height: 100%; overflow: hidden;}
+section.visual .img .imgBox img {width: 100%;}
+/* 페이지숫자이미지 */
+section.visual .img .page {position: absolute; right: -43px; top: 50%; transform: translateY(-50%);}
+section.visual .img .page img {width: 100%;}
+section.visual .title {position: absolute; top: 40%; left: 8%; color: #fff;}
+section.visual .title h2 {font-size: 50px; margin-bottom: 30px;}
+section.visual .title  p {font-size: 20px; font-weight: 300;}
+section.visual .menu {position: absolute; bottom: 15%; left: 8%;}
+section.visual .menu li {float: left; margin-right: 60px;}
+section.visual .menu li a {display: block; color: #fff;}
+section.visual .menu li a p {float: left; font-weight: bold; font-size: 20px; line-height: 1.6;}
+section.visual .menu li a p span {display: block; font-size: 15px; color: #aaa;}
+section.visual .menu li a .arrow {float: right; display: block; margin-top: 10px; margin-left: 20px; position: relative; z-index: 1;}
+section.visual .menu li a .arrow:before {content: ''; width: 40px; height: 40px; background: rgba(252,252,252,0.4); position: absolute; top: -10px; right: -10px; z-index: -1; transition: all 0.2s;}
+section.visual .menu li a:hover .arrow:before, section.visual .menu li a:focus .arrow:before {right: 0; top: 0;}
+section.visual .img .mask {display: block; position: absolute; width: 1px; height: 100%; top: 0; background-color: rgba(255,255,255,0.16);}
+section.visual .img .mask.a {left: 0%;}
+section.visual .img .mask.b {left: 25%;}
+section.visual .img .mask.c {left: 50%;}
+section.visual .img .mask.d {left: 75%;}
+
+/* mask animation */
+@keyframes mask {
+    0% {width: 25%; background: #000;}
+    50% {width: 25%; background: #000;}
+    99% {background: #000;}
+}
+section.visual .slick-active .img .mask.a {animation-name: mask; animation-duration: 0.4s;}
+section.visual .slick-active .img .mask.b {animation-name: mask; animation-duration: 0.6s;}
+section.visual .slick-active .img .mask.c {animation-name: mask; animation-duration: 0.8s;}
+section.visual .slick-active .img .mask.d {animation-name: mask; animation-duration: 1s;}
+
+@keyframes slide-up {
+    0% {opacity: 0;}
+    40% {opacity: 0; transform: translateY(40px);}
+}
+section.visual .slick-active .title h2 {animation-name: slide-up; animation-duration: 1.5s;}
+section.visual .slick-active .title p {animation-name: slide-up; animation-duration: 2.2s;}
+section.visual .menu {animation-name: slide-up; animation-duration: 2.8s;}
+
+@keyframes scaleani {
+    0% {transform: scale(1.3);}
+    30% {transform: scale(1.3);}
+}
+section.visual .slick-active .imgBox img {transform: scale(1); animation-name: scaleani; animation-duration: 5.2s;}
+
+/* visual slick-dots */
+.slick-dots {position: absolute; right: 4.5%; bottom: 30px;}
+.slick-dots li button {text-indent: -9999px; width: 12px; height: 12px; background: #ccc; border: none; cursor: pointer; margin-bottom: 15px;}
+
+/* section.about */
+section.about {width: 95%; margin: 40px auto; text-align: center; position: relative;}
+section.about img {width: 100%;}
+section.about .inner {width: 100%; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); color: #fff;}
+section.about .inner h2 {font-size: 30px; font-weight: normal;}
+section.about .inner .line {width: 35%;margin: 80px auto 30px; position: relative;}
+section.about .inner .line span {display: block; width: 100%; height: 1px; background: rgba(255,255,255,0.25);}
+section.about .inner .line li {width: 6px; height: 6px; border-radius: 50%; background: #fff; position: absolute;}
+section.about .inner .line li.a {left: 0; top: -2px;}
+section.about .inner .line li.b {left: 50%; transform: translateX(-50%); top:-2px;}
+section.about .inner .line li.c {right: 0; top: -2px;}
+section.about .inner .line li:before {content: ''; width: 100%; height: 100%; border-radius: 50%; background: rgba(255,255,255,0.7); position: absolute; left: 50%; top: 50%; margin-left: -3px; margin-top: -3px; animation: dot 1.5s infinite;}
+/* dot의 무한반복 애니메이션 */
+@keyframes dot {
+    100% {opacity: 1; transform: scale(3.5); opacity: 0;}
+}
+
+section.about .inner ul {width: 60%; margin: 0 auto;}
+section.about .inner ul li {float: left; width: 33.3333%; color: #c5c5c5; font-size: 17px;
+font-weight: 100;}
+section.about .inner ul li h3 {font-size: 18px; margin-bottom: 20px; font-weight: normal; color: #fff;}
+
+/* animation */
+@keyframes opacity-ani {
+    0% {opacity: 0;}
+    70% {opacity: 0;}
+}
+
+@keyframes slide-up2 {
+    0% {opacity: 0;}
+    70% {opacity: 0; transform: translateY(40px);}
+}
+
+section.about .inner.motion h2 {animation-name: slide-up; animation-duration: 0.8s;}
+section.about .inner.motion .line span {animation-name: opacity-ani; animation-duration: 0.8s;}
+section.about .inner.motion .line li.a {animation-name: opacity-ani; animation-duration: 1.2s;}
+section.about .inner.motion .line li.b {animation-name: opacity-ani; animation-duration: 1.6s;}
+section.about .inner.motion .line li.c {animation-name: opacity-ani; animation-duration: 2s;}
+section.about .inner.motion ul li {animation-name: slide-up2; animation-duration: 2.4s;}
+section.about .inner.motion ul li:nth-child(2) {animation-name: slide-up2; animation-duration: 2.8s;}
+section.about .inner.motion ul li:nth-child(3) {animation-name: slide-up2; animation-duration: 2.2s;}
+
+/* section.premium */
+section.premium {width: 95%; height: 1020px; margin: 40px auto; background: url(../img/con2_bg.jpg) no-repeat center/cover; padding: 100px 0; box-sizing: border-box; position: relative;}
+section.premium .txtImg {position: absolute; left: 0; top: 20%; display: block; width: 100%; overflow: hidden;}
+/* 애니메이션 효과를 주기 위해서는 반드시 이미지를 감싸는 부모에게 overflow:hidden 적용하여 애니메이션 진행을 감싸도록 한다. */
+
+/* txtImg animation */
+@keyframes widthAni {
+    0% {width: 0%;}
+    40% {width: 0%;}
+    100% {width: 100%;}
+}
+section.premium .txtImg.motion {animation-name: widthAni; animation-duration: 2.5s;}
+
+section.premium .title {position: absolute; left: 8%; top: 35%;}
+section.premium .title h2 {font-size: 30px; margin-bottom: 20px;}
+section.premium .title p {font-size: 19px; line-height: 1.6; margin-bottom: 30px;}
+section.premium .title a {display: inline-block; font-size: 24px;position: relative;}
+section.premium .title a:before {content: ''; width: 80px; height: 15px; background: rgba(0,0,0,0.08); position: absolute; left: 0; bottom: 0; transition: all 0.3s;}
+section.premium .title a:hover:before,section.premium .title a:focus:before {width: 0;}
+
+section.premium .banner li {position: absolute; box-shadow: 5px 6px 15px rgba(3,3,3,0.4); width: 15%;}
+section.premium .banner li img {width: 100%;}
+section.premium .banner li:nth-child(1).motion {left: 45%; top: 15%; animation-name: slide-up; animation-duration: 1.2s;}
+section.premium .banner li:nth-child(2).motion {left: 37%; top: 50%; animation-name: slide-up; animation-duration: 1.8s;}
+section.premium .banner li:nth-child(3).motion {left: 55%; top: 62%; animation-name: slide-up; animation-duration: 2.2s;}
+section.premium .banner li:nth-child(4).motion {right: 2%; width: 32%; max-width: 580px; animation-name: slide-up; animation-duration: 1.2s;}
+
+/* global */
+section.global {width: 95%; margin: 40px auto 0; padding: 40px 0; text-align: center; position: relative;}
+section.global:before {content: ''; width: 100%; height: 45%; background: #eee; position: absolute; left: 0; bottom: 0; z-index: -1;}
+section.global .title h2 {font-size: 30px; margin-bottom: 20px;}
+section.global .title p {font-size: 18px; line-height: 1.4; margin-bottom: 50px;}
+section.global ul {overflow: hidden; padding-top: 50px;}
+section.global ul li {float: left; width: 25%; padding: 15px; box-sizing: border-box;}
+section.global ul li:nth-child(1), section.global ul li:nth-child(3) {margin-top: -50px;}
+section.global ul li a {display: block; width: 100%; height: 100%;}
+section.global ul li a .img {box-shadow: 10px 10px 10px rgba(0,0,0,0.25); position: relative;}
+section.global ul li a .img img {width: 100%;}
+section.global ul li a .img:after {content: 'VIEW'; width: 100%; height: 100%;background: rgba(44,35,28,0.8); position: absolute; left: 0; top: 0; font-size: 22px; color: #d4d4d4; padding-top: 200px; box-sizing: border-box; opacity: 0; transition: all 0.5s;}
+section.global ul li a:hover .img, section.global ul li a:focus .img {transform: translate(-8px,-8px); box-shadow: 15px 18px 10px rgba(0,0,0,0.35);}
+section.global ul li a:hover .img:after, section.global ul li a:focus .img:after {opacity: 1;}
+section.global ul li a h3 {font-size: 22px; margin: 40px 0 15px;}
+section.global ul li a h3 span {display: block; font-size: 18px; font-weight: normal; color: #888;}
+section.global ul li a p {font-size: 17px;}
+/* footer */
+footer {padding: 80px 0 0; text-align: center;}
+footer .sns li {display: inline-block; margin-right: 30px;}
+footer .footerLogo {font-size: 40px; font-weight: 900; letter-spacing: -6px; color: #39312b; margin: 40px 0 30px;}
+footer ul li {font-size: 17px; line-height: 1.4;}
+footer ul li .copyright {font-size: 15px; font-weight: 100; color: #888; display: block; margin-top: 20px;}
+footer .box {padding: 150px 0; background: url(../img/bottom_bg.jpg) no-repeat center/cover; margin-top: 80px;}
+footer .box.motion h2 {color: #fff; font-size: 22px; font-weight: normal; animation-name: slide-up; animation-duration: 1s;}
+
+
+/* 반응형시작 */
+br.mo {display: none;}
+
+/* 1100~951px */
+@media screen and (max-width: 1100px) {
+    .wrap {min-width: 100%;}
+    header {height: 60px; line-height: 60px; padding: 0 10px;}
+    header .open {display: block; float: right; font-size: 32px; height: 60px; padding-top: 5px; box-sizing: border-box;}
+    header .bg {width: 100%; height: 100vh; background: rgba(0,0,0,0.6); display: block; position: absolute; left: 0; top: 0; z-index: 200; display: none;}
+    header .logo {font-size: 30px; letter-spacing: -4px;}
+    header nav {background: #fff; width: 0; height: 100vh; position: absolute; right: 0; top: 0; overflow: hidden; transition: width 0.3s; z-index: 300;}
+    header nav.on {width: 70%; max-width: 300px;}
+    header nav .close {display: block; position: absolute; right: 10px; top: 0; font-size: 35px; padding-top: 5px; box-sizing: border-box;}
+    header nav .gnb {margin-top: 100px; }
+    header nav .gnb li {width: 100%; margin: 0; line-height: 60px;}
+    header nav .gnb li a {width: 100%; padding-left: 30px; box-sizing: border-box; font-size: 20px; display: block;}
+    section.visual {margin-top: 60px;}
+    section.visual .slick-active .imgBox img {height: 100%; width: auto;}
+    section.visual .title {left: 5%;}
+    section.visual .menu {width: 100%; right: 5%}
+    section.visual .menu li {margin-right: 30px;}
+    section.visual .menu li a p {font-size: 17px;}
+    .slick-dots {right: 2.5%;}
+
+    section.about {width: 100%; height: 600px;}
+    section.about img {height: 100%; width: auto;}
+    section.about .inner .line {width: 40%;}
+    section.about .inner ul {width: 80%;}
+    section.about .inner ul li {width: 49%;}
+    section.about .inner ul li:nth-child(3) {margin-left: 25%;}
+
+    section.premium {width: 100%; height: 800px;}
+    section.premium .title {left: 5%;}
+    section.premium .txtImg {left: 5px;}
+    section.global {width: 100%;}
+    section.global ul li {padding: 10px;}
+    section.global ul li a p {font-size: 14px;}
+
+    footer .footerLogo {margin: 40px 0 20px;}
+}
+
+/* 950px~751px */
+@media screen and (max-width:950px){
+    section.visual .menu {display: none; width: 0; height: 0;}
+    section.visual .img {width: 92%;}
+    section.about {height: 480px;}
+    section.about .inner .line {width: 60%;}
+    section.about .inner ul {width: 95%;}
+    section.about .inner ul li {width: 33.33333%; font-size: 12px;}
+    section.about .inner ul li:nth-child(3) {margin-left: 0;}
+
+    section.premium .title {width: 100%; left: 0; top: 20px; text-align: center;}
+    section.premium .txtImg {height: 60px; left: 20px; top: 28%;}
+    section.premium .txtImg img {height: 100%;}
+    section.premium .banner {position: relative; width: 80%; left: 50%; transform: translateX(-50%); top: 30%; height: 500px;}
+    section.premium .banner li:nth-child(1).motion {left: 15%; width: 22%;}
+    section.premium .banner li:nth-child(2).motion {left: 8%; width: 22%;}
+    section.premium .banner li:nth-child(3).motion {left: 38%; width: 22%;}
+    section.premium .banner li:nth-child(4).motion {left: 50%; width: 48%;}
+
+    section.global .title h2 {font-size: 20px;}
+    section.global .title p {font-size: 13px;}
+    section.global ul {width: 95%; margin: auto;}
+    section.global.motion ul li {width: 50%; margin-bottom: 20px;}
+    section.global ul li a h3 {font-size: 20px;}
+    section.global ul li a p {font-size: 12px;}
+    section.global:before {height: 48%;}
+
+    footer {padding-top: 50px;}
+    footer .sns li:last-child {margin-right: 0;}
+    footer .footerLogo {font-size: 28px; letter-spacing: -4px;}
+    footer ul li {font-size: 13px;}
+    footer ul li .copyright {margin-top: 10px;}
+    footer .box.motion h2 {font-size: 17px;}
+}
+
+/* 750px~321px */
+@media screen and (max-width:750px) {
+    section.visual {height: 80vh; overflow: hidden;}
+    section.visual .img {width: 87%;}
+    section.visual .img .imgBox img {height: 80vh; width: auto;}
+    section.visual .img .page img {width: 75%; height: auto;}
+    br.mo {display: block;}
+    section.visual .title h2 {font-size: 29px;}
+    section.visual .title p {font-size: 14px;}
+    .slick-dots {right: 27px;}
+
+    section.about .inner.motion h2 {font-size: 20px;}
+    section.about .inner .line {display: none;}
+    section.about .inner.motion ul li {width: 100%; margin: 20px 0 0;}
+    section.about .inner ul li h3 {font-size: 16px;}
+
+    section.premium .title h2 {font-size: 20px;}
+    section.premium .title p {font-size: 13px;}
+    section.premium .title a {font-size: 18px;}
+    section.premium .title a:before {width: 60px; height: 12px;}
+    section.premium .txtImg.motion {left: 0; height: 32px; text-align: center; width: 100%;}
+    section.premium .banner {width: 100%; height: 400px;}
+    section.premium .banner li:nth-child(1).motion {left: 10%;}
+    section.premium .banner li:nth-child(2).motion {left: 5%;}
+    section.premium .banner li:nth-child(3).motion {left: 42%;}
+    section.premium .banner li:nth-child(4).motion {left: 44%; top: -5%;}
+}
+
+
+/* 320px 이하 */
+@media screen and (max-width:320px) {
+    section.visual .title h2 {font-size: 22px;}
+    section.visual .title p {font-size: 11px;}
+    section.visual .img .page img {width: 55%;}
+    .slick-dots {right: 17px;}
+    .slick-dots li button {width: 8px; height: 8px;}
+
+    section.about .inner.motion h2 {font-size: 16px;}
+    section.about .inner ul li h3 {font-size: 14px;}
+    section.about .inner ul li {font-size: 11px;}
+
+    section.premium {height: 600px;}
+    section.premium .title h2 {font-size: 16px;}
+    section.premium .txtImg.motion {top: 33%;}
+    section.premium .banner {height: 350px; top: 38%;}
+    section.premium .banner li:nth-child(1).motion {width: 25%;}
+    section.premium .banner li:nth-child(2).motion {width: 25%;}
+    section.premium .banner li:nth-child(3).motion {width: 25%;}
+
+    section.global .title h2 {font-size: 16px;}
+    section.global .title p {font-size: 11px;}
+    section.global .titul li a h3 {font-size: 13px;}
+
+    footer ul li {font-size: 10px;}
+    footer .box {padding: 50px 0;}
+    footer .box.motion h2 {font-size: 14px;}
+}
+
+
+
+
+
+
+
+
+
+

@@ -186,7 +186,7 @@ section.mockup .gif .pc_gif {width: 795px; height: 458px; position: absolute; to
 section.mockup .gif .pc_gif img {width: 795px; height: 458px;}
 section.mockup ul.mode_btn {width: 800px; margin:0 auto; display: flex; justify-content: space-between; padding-top: 10vh;}
 section.mockup p.more a {display: block; font-size: 25px; font-weight: 300; padding: 14px 45px; background: #212121; color: #fff7eb; border-radius: 50px;}
-section.mockup p.more a:hover {display: block; font-size: 25px; font-weight: 300; padding: 14px 45px; background: #fff; border: 1px solid #212121; color: #212121; border-radius: 50px; transition: all 0.4s;}
+section.mockup p.more a:hover, section.mockup p.more a:focus {display: block; font-size: 25px; font-weight: 300; padding: 14px 45px; background: #fff; border: 1px solid #212121; color: #212121; border-radius: 50px; transition: all 0.4s;}
 
 /* mockup motion */
 .mockup.motion img {animation-name: slide-up; animation-duration: 1.2s;}
