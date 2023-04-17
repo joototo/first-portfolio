@@ -117,15 +117,15 @@ section.ncs .text p:nth-child(2) {font-size: 16px; line-height: 1.8; letter-spac
 
 /* ncsList */
 .ncsList {width: 100%; height: 150vh; background: url(../img/card2.jpg) no-repeat center/cover; color: #fff;}
-.ncsList .mySwiper {width: 100%; padding-top: 35vh; position: relative; overflow: hidden; z-index: 1;}
+.ncsList .mySwiper {width: 100%; padding-top: 32vh; position: relative; overflow: hidden; z-index: 1;}
 .ncsList .mySwiper .swiper-slide {transform: scale(0.8); transition: all 0.5s;}
 .ncsList .mySwiper .swiper-slide a {display: block;}
 .ncsList .mySwiper .swiper-slide a:hover {transform: scale(1.1); transition: all 0.4s;}
 .ncsList .mySwiper .swiper-slide .swiper-wrapper {margin-top: 35vh;}
 .ncsList .mySwiper .swiper-slide img {width: 100%;}
 .ncsList .swiper-slide.swiper-slide-active {transform: scale(1);}
-.swiper-button-prev {position: absolute; top: 75%; left: 30.5%; color: #fff;}
-.swiper-button-next {position: absolute; top: 75%; right: 30.5%; color: #fff;}
+.swiper-button-prev {position: absolute; top: 75%; left: 26%; color: #fff;}
+.swiper-button-next {position: absolute; top: 75%; right: 26%; color: #fff;}
 .swiper-button-prev:hover {transform: scale(1.2); transition: all 0.4s;}
 .swiper-button-next:hover {transform: scale(1.2); transition: all 0.4s;}
 
